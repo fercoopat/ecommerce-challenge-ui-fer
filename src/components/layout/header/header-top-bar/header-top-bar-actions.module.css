@@ -1,0 +1,6 @@
+@media (max-width: 765px) {
+  .state-selector span,
+  .state-selector svg:nth-of-type(2) {
+    display: none;
+  }
+}

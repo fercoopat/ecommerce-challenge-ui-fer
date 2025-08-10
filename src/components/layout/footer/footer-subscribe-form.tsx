@@ -33,16 +33,16 @@ const FooterSubscribeForm = ({ className }: Props) => {
 
   return (
     <div className={cn('max-w-[388px] space-y-2', className)}>
-      <section className='flex items-center size-full max-h-[48px] relative'>
+      <section className='flex items-center size-full max-h-[48px] bg-background rounded-[30px] pl-6'>
+        <MailIcon className='text-[#363636]/50 h-[48px] -mr-2' />
+
         <Input
           type='email'
           placeholder='Correo electrónico'
-          className='bg-background rounded-l-[30px] rounded-r-none shadow-none h-full text-[#363636] pl-10 text-[14px] font-light min-h-[48px]'
+          className='rounded-r-none shadow-none border-none h-full text-[#363636] text-[14px] font-light min-h-[48px] mb-1'
           value={email}
           onChange={handleChange}
         />
-
-        <MailIcon className='absolute left-[4%] top-[30%] bottom-0 text-[#363636]/50 size-[20px]' />
 
         <Button
           variant='secondary'

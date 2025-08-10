@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useCallback } from 'react';
+import { useCallback, useTransition } from 'react';
 
 import {
   Select,
@@ -10,27 +10,49 @@ import {
   SelectItem,
   SelectLabel,
   SelectTrigger,
-  SelectValue,
 } from '@/components/ui/select';
 import { APP_PATHS } from '@/constants/app.paths';
 import { IStateCode, STATES_ENTRIES } from '@/constants/states';
-import { MapPinIcon } from 'lucide-react';
+import { setSettingsState } from '@/lib/actions/settings.actions';
+import { cn } from '@/lib/utils';
+import { LoaderCircleIcon } from 'lucide-react';
 
-const StateSelector = () => {
+type Props = {
+  children: React.ReactNode;
+  className?: string;
+  defaultValue?: IStateCode | '';
+};
+const StateSelector = ({ children, className, defaultValue = '' }: Props) => {
   const { push } = useRouter();
+  const [isPending, startTransition] = useTransition();
 
   const handleSelectState = useCallback(
     (stateCode: IStateCode) => {
-      push(APP_PATHS.setStateCodePath(stateCode));
+      startTransition(async () => {
+        await setSettingsState(stateCode);
+        push(APP_PATHS.setStateCodePath(stateCode));
+      });
     },
     [push]
   );
 
   return (
-    <Select onValueChange={handleSelectState}>
-      <SelectTrigger className='w-fit min-w-[138px]'>
-        <MapPinIcon />
-        <SelectValue placeholder='Seleccione la provincia' />
+    <Select
+      onValueChange={handleSelectState}
+      defaultValue={defaultValue}
+      disabled={isPending}
+    >
+      <SelectTrigger
+        className={cn(
+          'w-fit min-w-[138px] shadow-none bg-[#E6E9EE] min-h-[47px]',
+          className
+        )}
+      >
+        {!isPending ? (
+          children
+        ) : (
+          <LoaderCircleIcon className='animate-spin mx-auto size-[32px] md:size-[20px]' />
+        )}
       </SelectTrigger>
 
       <SelectContent>

@@ -1,9 +1,6 @@
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 
-import { PageWidthContainer } from '@/components/layout/containers';
-import { Footer } from '@/components/layout/footer';
-import { Header } from '@/components/layout/header';
 import { cn } from '@/lib/utils';
 
 import './globals.css';
@@ -26,17 +23,7 @@ type Props = Readonly<{
 export default function RootLayout({ children }: Props) {
   return (
     <html lang='es'>
-      <body className={cn('antialiased', montserrat.variable)}>
-        <section className='grid grid-rows-[auto_1fr_auto] gap-2 min-h-dvh'>
-          <Header />
-
-          <PageWidthContainer className='overflow-auto size-full'>
-            {children}
-          </PageWidthContainer>
-
-          <Footer />
-        </section>
-      </body>
+      <body className={cn('antialiased', montserrat.variable)}>{children}</body>
     </html>
   );
 }

@@ -1,9 +1,11 @@
 'use client';
 
-import { createContext, useContext } from 'react';
+import { createContext, use } from 'react';
+
+import { IStateCode } from '@/constants/states';
 
 type SettingsContextValue = {
-  state: string;
+  state: IStateCode;
 };
 
 const SettingsContext = createContext<SettingsContextValue | undefined>(
@@ -12,7 +14,7 @@ const SettingsContext = createContext<SettingsContextValue | undefined>(
 
 type Props = Readonly<{
   children: React.ReactNode;
-  state: string;
+  state: IStateCode;
 }>;
 
 export function SettingsProvider({ children, state }: Props) {
@@ -24,7 +26,7 @@ export function SettingsProvider({ children, state }: Props) {
 }
 
 export const useSettings = () => {
-  const context = useContext(SettingsContext);
+  const context = use(SettingsContext);
 
   if (!context) {
     throw new Error('useSettings must be used inside SettingsProvider');
