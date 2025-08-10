@@ -1,6 +1,6 @@
 import { PageWidthContainer } from '@/components/layout/containers';
-import HeaderNavMenu from '@/components/layout/header/header-nav-menu';
-import HeaderTopBarActions from '@/components/layout/header/header-top-bar/header-top-bar-actions';
+import { HeaderNavMenu } from '@/components/layout/header/header-top-bar/header-nav-menu';
+import { HeaderTopBarActions } from '@/components/layout/header/header-top-bar/header-top-bar-actions';
 import HeaderTopBarSearch from '@/components/layout/header/header-top-bar/header-top-bar-search';
 
 const HeaderTopBar = () => {

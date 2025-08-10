@@ -39,7 +39,7 @@ const FooterSubscribeForm = ({ className }: Props) => {
         <Input
           type='email'
           placeholder='Correo electrónico'
-          className='rounded-r-none shadow-none border-none h-full text-[#363636] text-[14px] font-light min-h-[48px] mb-1'
+          className='rounded-r-none shadow-none border-none h-full text-[#363636] text-[14px] font-light min-h-[48px] mb-1 focus-visible:ring-0'
           value={email}
           onChange={handleChange}
         />

@@ -1,0 +1,44 @@
+{
+  "categories": [
+    {
+      "id": "e91249c4-f927-5929-8c40-0304ee2bcd23",
+      "name": "Vitaminas",
+      "icon": "VitaminsIcon"
+    },
+    {
+      "id": "dd5e1f9d-5bd1-56b1-9385-8a765c652939",
+      "name": "Analgésicos y antiinflamatorios",
+      "icon": "AnalgesicsAndAntiInflammatoriesIcon"
+    },
+    {
+      "id": "511cdd42-e419-5e04-bf22-52532f402898",
+      "name": "Antiinfecciosos",
+      "icon": "AntiInfectiveIcon"
+    },
+    {
+      "id": "e38ec00a-a6fd-50d6-beb6-90ad5a4287db",
+      "name": "Mucolíticos y antitusivos",
+      "icon": "MucolyticsAndAntitussivesIcon"
+    },
+    {
+      "id": "1ed00538-7bc2-5f89-8341-c3c874adb81e",
+      "name": "Antiulcerosos y antiácidos",
+      "icon": "AntiulcerAndAntacidsIcon"
+    },
+    {
+      "id": "b6130c64-1cd4-5343-9289-2ff25e5ce3ec",
+      "name": "Antidiarreicos y laxantes",
+      "icon": "AntidiarrhealsAndLaxativesIcon"
+    },
+    {
+      "id": "d414cd05-8119-5410-a5f2-96540aa29886",
+      "name": "Antipiréticos",
+      "icon": "AntipyreticsIcon"
+    },
+    {
+      "id": "ca325baf-3b8e-53e5-90c4-5c14128de62c",
+      "name": "Antialérgicos",
+      "icon": "AntiallergicIcon"
+    }
+  ]
+}

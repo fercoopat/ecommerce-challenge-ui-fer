@@ -44,7 +44,7 @@ const StateSelector = ({ children, className, defaultValue = '' }: Props) => {
     >
       <SelectTrigger
         className={cn(
-          'w-fit min-w-[138px] shadow-none bg-[#E6E9EE] min-h-[47px]',
+          'w-fit min-w-[138px] shadow-none bg-[#E6E9EE] min-h-[47px] cursor-pointer',
           className
         )}
       >

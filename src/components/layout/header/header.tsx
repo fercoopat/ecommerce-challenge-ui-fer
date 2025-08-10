@@ -1,4 +1,4 @@
-import HeaderNavbar from '@/components/layout/header/header-navbar';
+import HeaderNavbar from '@/components/layout/header/header-navbar/header-navbar';
 import { HeaderTopBar } from '@/components/layout/header/header-top-bar';
 
 const Header = () => {

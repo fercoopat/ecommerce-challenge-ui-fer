@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <footer className='bg-primary w-full min-h-[337px] text-white'>
       <PageWidthContainer className='flex flex-col items-start gap-10 py-8 h-full md:gap-20'>
-        <section className='flex flex-col gap-6 md:flex-row md:justify-between md:items-center'>
+        <section className='flex flex-col gap-6 md:flex-row md:justify-between md:items-center w-full'>
           <div className='flex flex-col gap-1'>
             <p className='font-bold text-xl md:max-w-[347px]'>
               Subscríbete aquí para conocer más de nuestras ofertas
