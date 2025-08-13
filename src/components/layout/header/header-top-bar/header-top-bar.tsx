@@ -1,3 +1,4 @@
+import LogoIcon from '@/components/icons/logo.icon';
 import { PageWidthContainer } from '@/components/layout/containers';
 import { HeaderNavMenu } from '@/components/layout/header/header-top-bar/header-nav-menu';
 import { HeaderTopBarActions } from '@/components/layout/header/header-top-bar/header-top-bar-actions';
@@ -10,7 +11,10 @@ const HeaderTopBar = () => {
         <div className='flex items-center gap-1 md:w-full md:max-w-fit'>
           <HeaderNavMenu className='md:hidden' contentClassName='md:hidden' />
 
-          <h1 className='font-bold text-xl max-md:mb-1'>Botifarma</h1>
+          <div className='flex items-center md:flex-row-reverse'>
+            <h1 className='font-bold text-xl max-md:mb-2'>Botifarma</h1>
+            <LogoIcon className='size-[24px] md:size-[32px]' />
+          </div>
         </div>
 
         <HeaderTopBarActions />

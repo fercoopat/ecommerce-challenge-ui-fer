@@ -40,5 +40,127 @@
       "name": "Antialérgicos",
       "icon": "AntiallergicIcon"
     }
+  ],
+  "products": [
+    {
+      "id": "dd4d8744-d61f-5d8c-9aa2-c48841d4f7501",
+      "name": "Luvit Ampolla inyectable",
+      "image": "/images/luvit-ampolla.jpg",
+      "price": 1.5,
+      "rating": 4,
+      "category": {
+        "id": "dd5e1f9d-5bd1-56b1-9385-8a765c652939",
+        "name": "Analgésicos y antiinflamatorios",
+        "icon": "AnalgesicsAndAntiInflammatoriesIcon"
+      }
+    },
+    {
+      "id": "e19ad864-717d-5123-b018-ed1c31ddde7e2",
+      "name": "Vitamina B, Nicotinamida",
+      "image": "/images/vitamina-b-nicotinamida.jpg",
+      "price": 25.5,
+      "rating": 4,
+      "category": {
+        "id": "e91249c4-f927-5929-8c40-0304ee2bcd23",
+        "name": "Vitaminas",
+        "icon": "VitaminsIcon"
+      }
+    },
+    {
+      "id": "7c59a9d8-9b97-59d4-b600-8ed4c9a016033",
+      "name": "Neurobion",
+      "image": "/images/neurobion.jpg",
+      "price": 10.5,
+      "rating": 4,
+      "category": {
+        "id": "e91249c4-f927-5929-8c40-0304ee2bcd23",
+        "name": "Vitaminas",
+        "icon": "VitaminsIcon"
+      }
+    },
+    {
+      "id": "fef80ffc-9aed-5436-8f07-ecbfa4ae24774",
+      "name": "Gerber GOM MAST",
+      "image": "/images/gerber-gom-mast.jpg",
+      "price": 10.5,
+      "rating": 3,
+      "category": {
+        "id": "dd5e1f9d-5bd1-56b1-9385-8a765c652939",
+        "name": "Analgésicos y antiinflamatorios",
+        "icon": "AnalgesicsAndAntiInflammatoriesIcon"
+      }
+    },
+    {
+      "id": "3fea7e60-3771-5415-8ad6-862ab8498e555",
+      "name": "Mentol Chino 500g",
+      "image": "/images/mentol-chino.jpg",
+      "price": 12.5,
+      "rating": 4,
+      "category": {
+        "id": "e38ec00a-a6fd-50d6-beb6-90ad5a4287db",
+        "name": "Mucolíticos y antitusivos",
+        "icon": "MucolyticsAndAntitussivesIcon"
+      }
+    },
+    {
+      "id": "5145c80f-9c6f-5be5-8747-c0e313266d396",
+      "name": "Neuressens",
+      "image": "/images/neuressens.jpg",
+      "price": 75.5,
+      "rating": 5,
+      "category": {
+        "id": "e91249c4-f927-5929-8c40-0304ee2bcd23",
+        "name": "Vitaminas",
+        "icon": "VitaminsIcon"
+      }
+    },
+    {
+      "id": "6905b84a-2edc-57a3-ab79-0a5d74cd4d9e7",
+      "name": "Medox ABC Jarabe",
+      "image": "/images/medox-abc.jpg",
+      "price": 25.5,
+      "rating": 4,
+      "category": {
+        "id": "cat3",
+        "name": "Suplementos infantiles",
+        "icon": "🍼"
+      }
+    },
+    {
+      "id": "818feb10-4faf-5eca-8c14-b595738771608",
+      "name": "Dominal, Paracetamol 500g",
+      "image": "/images/dominal.jpg",
+      "price": 26.5,
+      "rating": 4,
+      "category": {
+        "id": "e91249c4-f927-5929-8c40-0304ee2bcd23",
+        "name": "Vitaminas",
+        "icon": "VitaminsIcon"
+      }
+    },
+    {
+      "id": "140eb43b-5360-5dcc-8c69-6aefc10efbd29",
+      "name": "Diflox",
+      "image": "/images/diflox.jpg",
+      "price": 75.5,
+      "rating": 4,
+      "category": {
+        "id": "cat4",
+        "name": "Ungüentos",
+        "icon": "🧴"
+      }
+    },
+    {
+      "id": "df3f98e3-38c4-5624-bfe4-d8ef1e4ef97810",
+      "name": "Analgan Rapid Paracetamol",
+      "image": "/images/analgan-rapid.jpg",
+      "price": 75.5,
+      "rating": 4,
+      "category": {
+        "id": "e91249c4-f927-5929-8c40-0304ee2bcd23",
+        "name": "Vitaminas",
+        "icon": "VitaminsIcon"
+      }
+    }
   ]
 }

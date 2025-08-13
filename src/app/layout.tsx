@@ -23,7 +23,9 @@ type Props = Readonly<{
 export default function RootLayout({ children }: Props) {
   return (
     <html lang='es'>
-      <body className={cn('antialiased', montserrat.variable)}>{children}</body>
+      <body className={cn('antialiased', montserrat.className)}>
+        {children}
+      </body>
     </html>
   );
 }
