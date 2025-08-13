@@ -48,11 +48,12 @@
   --radius: 0.625rem;
   --background: #e9eef8;
   --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
+  --card: #DADFF2;
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
   --primary: #264092;
+  --primary-dark: '#2B3445';
   --primary-foreground: oklch(0.985 0 0);
   --secondary: #e79f00;
   --secondary-foreground: #fff;
