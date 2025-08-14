@@ -40,9 +40,11 @@ const ProductCard = ({ product, className }: Props) => {
         <div className='min-h-[157px] relative w-full lg:min-h-[240px] bg-white rounded-t-[15px]'>
           <ImageFallback
             fill
+            priority
             alt={product?.name}
             src={product.image}
             className='object-contain object-center rounded-t-[15px]'
+            fallbackSrc='rounded-t-[15px]'
           />
         </div>
 

@@ -1,7 +1,7 @@
 'use client';
 
 import Image, { ImageProps } from 'next/image';
-import { memo, SyntheticEvent, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 
 import { FALLBACK_IMAGE } from '@/constants/images/no-available-images';
 import { cn } from '@/lib/utils';
@@ -25,7 +25,7 @@ const ImageFallback = ({
   const [imgSrc, setImgSrc] = useState(src as string);
 
   const handleLoad = useCallback(
-    (e: SyntheticEvent<HTMLImageElement>) => {
+    (e: React.SyntheticEvent<HTMLImageElement>) => {
       if (e.currentTarget.naturalWidth === 0) {
         setImgSrc(fallbackSrc);
       } else {

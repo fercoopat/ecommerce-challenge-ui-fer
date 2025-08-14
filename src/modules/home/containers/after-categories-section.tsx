@@ -1,12 +1,12 @@
 import { Banner } from '@/components/banner';
-import { HOME_CONTENT_BANNER_IMAGES } from '@/constants/images/home/banner-images';
+import { HOME_AFTER_CATEGORIES_BANNER_IMAGES } from '@/constants/images/home/banner-images';
 
-const SubCategoriesSection = () => {
+const AfterCategoriesSection = () => {
   return (
     <section className='max-w-full relative my-8'>
       <Banner
-        desktopSrc={HOME_CONTENT_BANNER_IMAGES.pharmacyTrustDesktop}
-        mobileSrc={HOME_CONTENT_BANNER_IMAGES.pharmacyTrustMobile}
+        desktopSrc={HOME_AFTER_CATEGORIES_BANNER_IMAGES.pharmacyTrustDesktop}
+        mobileSrc={HOME_AFTER_CATEGORIES_BANNER_IMAGES.pharmacyTrustMobile}
         switchAt='xl'
         articleClassName='h-[188px] xl:h-[85px] bg-secondary-light xl:rounded-[6px]'
         className='flex items-center'
@@ -28,4 +28,4 @@ const SubCategoriesSection = () => {
     </section>
   );
 };
-export default SubCategoriesSection;
+export default AfterCategoriesSection;

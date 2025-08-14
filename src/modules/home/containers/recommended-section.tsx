@@ -5,7 +5,7 @@ import { ProductCard } from '@/modules/product/components/product-card';
 import { ProductService } from '@/modules/product/services/product.service';
 
 const RecommendedSectionContent = async () => {
-  const { data: products } = await ProductService.getAll();
+  const { data: products } = await ProductService.getAll({ size: 10 });
 
   return (
     <div className='grid grid-cols-2 gap-2 md:grid-cols-4 xl:grid-cols-5'>
