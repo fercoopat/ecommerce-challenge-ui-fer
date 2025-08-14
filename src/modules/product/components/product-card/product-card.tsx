@@ -1,12 +1,11 @@
 import ImageFallback from '@/components/image-fallback/image-fallback';
 import { Rating } from '@/components/rating/rating';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import { CurrencyValue } from '@/modules/product/components/currency-value';
 import ProductCardActions from '@/modules/product/components/product-card/product-card-actions';
+import ProductCardFavoriteAction from '@/modules/product/components/product-card/product-card-favorite-action';
 import { IProduct } from '@/modules/product/interfaces/product.interface';
-import { HeartIcon } from 'lucide-react';
 
 type Props = {
   product: IProduct | undefined;
@@ -20,7 +19,7 @@ const ProductCard = ({ product, className }: Props) => {
   return (
     <Card
       className={cn(
-        'min-h-[313px] w-full max-w-[184px] relative shadow-[0_20px_30px_0_rgba(43,52,69,0.04)] p-0 bg-[rgba(255,255,255,0.50)] backdrop-blur-md lg:max-w-[276px] lg:min-h-[405px]',
+        'w-full h-full max-w-[184px] relative shadow-[0_20px_30px_0_rgba(43,52,69,0.04)] p-0 bg-[rgba(255,255,255,0.50)] backdrop-blur-md lg:max-w-[276px] lg:min-h-[405px]',
         className
       )}
     >
@@ -28,15 +27,9 @@ const ProductCard = ({ product, className }: Props) => {
         Nuevo
       </span>
 
-      <Button
-        size={'icon'}
-        variant={'outline'}
-        className='absolute top-2 right-2 z-10 rounded-full bg-transparent'
-      >
-        <HeartIcon className='size-[22px]' />
-      </Button>
+      <ProductCardFavoriteAction className='absolute top-2 right-2 z-10' />
 
-      <CardContent className='p-0'>
+      <CardContent className='p-0 flex-1'>
         <div className='min-h-[157px] relative w-full lg:min-h-[240px] bg-white rounded-t-[15px]'>
           <ImageFallback
             fill
@@ -44,7 +37,7 @@ const ProductCard = ({ product, className }: Props) => {
             alt={product?.name}
             src={product.image}
             className='object-contain object-center rounded-t-[15px]'
-            fallbackSrc='rounded-t-[15px]'
+            placeholderClassName='rounded-t-[15px]'
           />
         </div>
 

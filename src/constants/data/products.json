@@ -1,6 +1,6 @@
 [
   {
-    "id": "dd4d8744-d61f-5d8c-9aa2-c48841d4f7501",
+    "id": "5e93aa77-567e-5102-825d-d04de61d3065",
     "name": "Luvit Ampolla inyectable",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/108983P-1.jpg",
     "price": 1.5,
@@ -12,7 +12,7 @@
     }
   },
   {
-    "id": "e19ad864-717d-5123-b018-ed1c31ddde7e2",
+    "id": "7ffea011-ddf7-5b99-99cf-55befe5b8c2f",
     "name": "Vitamina B, Nicotinamida",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/1872P-1.jpg",
     "price": 25.5,
@@ -24,7 +24,7 @@
     }
   },
   {
-    "id": "7c59a9d8-9b97-59d4-b600-8ed4c9a016033",
+    "id": "a99acfdb-97ce-5ec0-9f05-078bf01df886",
     "name": "Neurobion",
     "image": "https://m.media-amazon.com/images/I/61PsCTB7q7L._UF1000,1000_QL80_.jpg",
     "price": 10.5,
@@ -36,7 +36,7 @@
     }
   },
   {
-    "id": "fef80ffc-9aed-5436-8f07-ecbfa4ae24774",
+    "id": "2ecde341-aa0d-5d4f-9e49-bee96316d819",
     "name": "Gerber GOM MAST",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/110143P-1.jpg",
     "price": 10.5,
@@ -48,7 +48,7 @@
     }
   },
   {
-    "id": "3fea7e60-3771-5415-8ad6-862ab8498e555",
+    "id": "a274f85f-4593-5d28-9f1b-6c9e8ca48dbe",
     "name": "Mentol Chino 500g",
     "image": "https://www.gosupps.com/media/catalog/product/cache/25/small_image/1500x1650/9df78eab33525d08d6e5fb8d27136e95/6/1/614KLMUOuyL.jpg",
     "price": 12.5,
@@ -60,7 +60,7 @@
     }
   },
   {
-    "id": "5145c80f-9c6f-5be5-8747-c0e313266d396",
+    "id": "b9875c80-9c17-5685-8093-1379cbba283c",
     "name": "Neuressens",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/11593P-1.jpg",
     "price": 75.5,
@@ -72,7 +72,7 @@
     }
   },
   {
-    "id": "6905b84a-2edc-57a3-ab79-0a5d74cd4d9e7",
+    "id": "f2fcc05b-843d-5535-acf9-a49c77ae182d",
     "name": "Medox ABC Jarabe",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/47288P-1.jpg",
     "price": 25.5,
@@ -84,7 +84,7 @@
     }
   },
   {
-    "id": "818feb10-4faf-5eca-8c14-b595738771608",
+    "id": "022af51c-3a11-5029-a83d-8b964220f2d9",
     "name": "Dominal, Paracetamol 500g",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/98273P-1.jpg",
     "price": 26.5,
@@ -96,7 +96,7 @@
     }
   },
   {
-    "id": "140eb43b-5360-5dcc-8c69-6aefc10efbd29",
+    "id": "f78c1497-6c71-522e-8668-cef39b964073",
     "name": "Diflox",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/100583P-1.jpg",
     "price": 75.5,
@@ -108,7 +108,7 @@
     }
   },
   {
-    "id": "df3f98e3-38c4-5624-bfe4-d8ef1e4ef97810",
+    "id": "a03dbc52-72ae-5870-a3db-e484b9f24435",
     "name": "Analgan Rapid Paracetamol",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/113644P-1.jpg",
     "price": 75.5,
@@ -120,7 +120,7 @@
     }
   },
   {
-    "id": "d7433e39-418e-51be-ab39-3da35c9a347c",
+    "id": "142473b6-b18d-5163-a09f-41533fa50a51",
     "name": "Vitamina C",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/91181P-1.jpg",
     "price": 10.5,
@@ -132,7 +132,7 @@
     }
   },
   {
-    "id": "7df53ba5-896a-5d4d-a9f8-dfaaa71ae113",
+    "id": "660e3e69-07e5-5e6c-be9d-e4fb9a3f48e2",
     "name": "Citramag",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/110914P-1.jpg",
     "price": 35.5,
@@ -144,7 +144,7 @@
     }
   },
   {
-    "id": "5d467676-83f4-5ec1-b3d9-f0247bb287f7",
+    "id": "abf470c1-4e47-5ce1-b05d-030b5d0a1a5c",
     "name": "Desinflamex forte",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/110328P-1.jpg",
     "price": 10.5,
@@ -156,7 +156,7 @@
     }
   },
   {
-    "id": "560df23b-50f9-5765-ab42-ac65c3dea299",
+    "id": "6d1b4c12-0aee-5982-8eba-1cebbf5bcf86",
     "name": "X Ray Dol TABx250",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/103686P-1.jpg",
     "price": 10.5,
@@ -168,7 +168,7 @@
     }
   },
   {
-    "id": "d844d719-eb5c-5a7d-a9c1-f93df37f407a",
+    "id": "f0a27a06-6eef-55a1-8eab-951a5e44e074",
     "name": "Aspirina Advance",
     "image": "https://www.pharmacys.com.ec/wcsstore/DF_CatalogAsset/images/catalog/producto/fullimage/92271P-1.jpg",
     "price": 12.3,

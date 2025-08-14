@@ -2,9 +2,12 @@ import { PRODUCTS_MOCK_DATA } from '@/constants/data';
 import { ApiClient, ApiResponse } from '@/lib/api/api-client';
 import { IProduct } from '@/modules/product/interfaces/product.interface';
 
+type IProductKey = keyof IProduct;
+
 type Params = {
   page?: number;
   size?: number;
+  sort?: Partial<Record<IProductKey, 'asc' | 'desc'>>;
 };
 
 class Service extends ApiClient {

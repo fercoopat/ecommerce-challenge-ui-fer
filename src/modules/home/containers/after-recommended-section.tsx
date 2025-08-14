@@ -3,7 +3,7 @@ import { HOME_AFTER_RECOMMENDED_BANNER_IMAGES } from '@/constants/images/home/ba
 
 const AfterRecommendedSection = () => {
   return (
-    <section className='grid gap-4 my-8 lg:grid-cols-2 xl:grid-cols-3'>
+    <section className='grid gap-4 my-8 lg:grid-cols-2 xl:grid-cols-3 xl:my-12'>
       {Object.entries(HOME_AFTER_RECOMMENDED_BANNER_IMAGES).map(
         ([key, image], index) => (
           <article

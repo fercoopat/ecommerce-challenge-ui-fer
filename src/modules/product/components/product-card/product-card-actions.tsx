@@ -41,7 +41,7 @@ const ProductCardActions = () => {
           orientation='vertical'
         />
 
-        <span className='text-primary-dark text-[15px] px-3'>
+        <span className='text-primary-dark text-[15px] w-8 text-center'>
           {productAmount}
         </span>
 
@@ -60,8 +60,12 @@ const ProductCardActions = () => {
         </Button>
       </div>
 
-      <Button size={'icon'} variant={'ghost'}>
-        <AddProductIcon className='text-primary size-[27px]' />
+      <Button
+        size={'icon'}
+        variant={'ghost'}
+        className='rounded-full text-primary hover:bg-background p-1 size-fit'
+      >
+        <AddProductIcon className='size-[27px]' />
       </Button>
     </CardFooter>
   );

@@ -11,7 +11,7 @@ const CategoriesSectionContent = async () => {
 
   return (
     <CarouselContainer hideBtns loop align={'start'}>
-      <CarouselContent className=''>
+      <CarouselContent>
         {categories?.map((category, index) => (
           <CarouselItem
             key={category.id + index}
