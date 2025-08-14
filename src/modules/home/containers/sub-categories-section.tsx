@@ -3,7 +3,7 @@ import { HOME_CONTENT_BANNER_IMAGES } from '@/constants/images/home/banner-image
 
 const SubCategoriesSection = () => {
   return (
-    <div className='max-w-full min-h-[188px] relative mb-4 mt-8'>
+    <section className='max-w-full relative my-8'>
       <Banner
         desktopSrc={HOME_CONTENT_BANNER_IMAGES.pharmacyTrustDesktop}
         mobileSrc={HOME_CONTENT_BANNER_IMAGES.pharmacyTrustMobile}
@@ -25,7 +25,7 @@ const SubCategoriesSection = () => {
           </p>
         </div>
       </Banner>
-    </div>
+    </section>
   );
 };
 export default SubCategoriesSection;

@@ -1,5 +1,6 @@
-import Image, { getImageProps } from 'next/image';
+import { getImageProps } from 'next/image';
 
+import ImageFallback from '@/components/image-fallback/image-fallback';
 import { HOME_HERO_BANNER_IMAGES } from '@/constants/images/home/banner-images';
 
 const { props: mobileImg } = getImageProps({
@@ -35,20 +36,22 @@ const HeroSection = () => {
 
       <div className='grid gap-4 lg:col-span-2'>
         <div className='relative rounded-[15px] size-full md:aspect-video lg:aspect-auto min-h-[189px] lg:min-h-auto'>
-          <Image
+          <ImageFallback
             priority
             fill
             sizes='(max-width: 1024px) 100vw, 33vw'
+            placeholderClassName='rounded-[15px]'
             alt={HOME_HERO_BANNER_IMAGES.takeCare}
             src={HOME_HERO_BANNER_IMAGES.takeCare}
           />
         </div>
 
         <div className='relative rounded-[15px] size-full md:aspect-video lg:aspect-auto min-h-[189px] lg:min-h-auto'>
-          <Image
+          <ImageFallback
             priority
             fill
             sizes='(max-width: 1024px) 100vw, 33vw'
+            placeholderClassName='rounded-[15px]'
             alt={HOME_HERO_BANNER_IMAGES.bestPrice}
             src={HOME_HERO_BANNER_IMAGES.bestPrice}
           />
