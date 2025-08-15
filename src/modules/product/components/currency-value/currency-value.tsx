@@ -1,4 +1,7 @@
+'use client';
+
 import { cn } from '@/lib/utils';
+import { useMemo } from 'react';
 
 type Props = {
   value: number | string;
@@ -11,18 +14,22 @@ const CurrencyValue = ({
   supClassName,
   ...props
 }: Props) => {
-  const formatter = new Intl.NumberFormat('es', {
-    style: 'currency',
-    currency,
-    currencyDisplay: 'code',
-  });
+  const formatter = useMemo(
+    () =>
+      new Intl.NumberFormat('es', {
+        style: 'currency',
+        currency,
+        currencyDisplay: 'code',
+      }),
+    [currency]
+  );
 
-  const currencyValue = formatter
-    .format(Number(value))
-    .replace(/USD/, '')
-    .trim();
+  const currencyValue = useMemo(
+    (): string => formatter.format(Number(value)).replace(/USD/, '').trim(),
+    [formatter, value]
+  );
 
-  const isPercent = currency === '%';
+  const isPercent = useMemo((): boolean => currency === '%', [currency]);
 
   return (
     <span {...props} className={cn('text-[16px]', props?.className)}>

@@ -10,7 +10,7 @@ const MainLayoutContainer = ({ children }: Props) => {
     <section className='grid grid-rows-[auto_1fr_auto] gap-2 min-h-dvh'>
       <Header />
 
-      <PageWidthContainer className='overflow-auto size-full my-4'>
+      <PageWidthContainer className='size-full my-4'>
         {children}
       </PageWidthContainer>
 

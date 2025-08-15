@@ -4,6 +4,7 @@ import AfterRecommendedSection from '@/modules/home/containers/after-recommended
 import BestsellerSection from '@/modules/home/containers/bestseller-section';
 import CategoriesSection from '@/modules/home/containers/categories-section';
 import HeroSection from '@/modules/home/containers/hero-section';
+import PillsSection from '@/modules/home/containers/pills-section';
 import RecommendedSection from '@/modules/home/containers/recommended-section';
 
 type Props = {
@@ -26,6 +27,8 @@ export default async function StatePage({}: Props) {
       <AfterRecommendedSection />
 
       <BestsellerSection />
+
+      <PillsSection />
     </>
   );
 }
