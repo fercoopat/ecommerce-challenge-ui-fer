@@ -1,13 +1,13 @@
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
-type Breakpoint = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+type Breakpoint = "sm" | "md" | "lg" | "xl" | "2xl";
 
 const BANNER_BREAKPOINTS: Record<Breakpoint, string> = {
-  sm: '(min-width: 640px)',
-  md: '(min-width: 768px)',
-  lg: '(min-width: 1024px)',
-  xl: '(min-width: 1280px)',
-  '2xl': '(min-width: 1536px)',
+  sm: "(min-width: 640px)",
+  md: "(min-width: 768px)",
+  lg: "(min-width: 1024px)",
+  xl: "(min-width: 1280px)",
+  "2xl": "(min-width: 1536px)",
 } as const;
 
 type BannerProps = {
@@ -28,14 +28,14 @@ const Banner = ({
   desktopSrc,
   mobileSrc = desktopSrc,
   imgClassName,
-  alt = 'Banner',
-  switchAt = 'md',
+  alt = "Banner",
+  switchAt = "md",
 }: BannerProps) => {
   return (
     <article
       className={cn(
-        'relative w-full rounded-[15px] overflow-hidden',
-        articleClassName
+        "relative w-full overflow-hidden rounded-[15px]",
+        articleClassName,
       )}
     >
       <picture>
@@ -43,11 +43,11 @@ const Banner = ({
         <img
           src={mobileSrc}
           alt={alt}
-          className={cn('size-full', imgClassName)}
+          className={cn("size-full", imgClassName)}
         />
       </picture>
 
-      <div className={cn('absolute inset-0 z-10', className)}>{children}</div>
+      <div className={cn("absolute inset-0 z-10", className)}>{children}</div>
     </article>
   );
 };

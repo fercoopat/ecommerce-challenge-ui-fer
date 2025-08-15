@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 
 import { CarouselContainer } from '@/components/carousel-container';
 import { SkeletonsList } from '@/components/skeletons';
-import { CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { CarouselItem } from '@/components/ui/carousel';
 import { ProductCard } from '@/modules/product/components/product-card';
 import { ProductService } from '@/modules/product/services/product.service';
 
@@ -13,16 +13,14 @@ const BestsellerSectionContent = async () => {
 
   return (
     <CarouselContainer loop align={'start'} btnClassName='max-md:hidden'>
-      <CarouselContent>
-        {products?.map((product, index) => (
-          <CarouselItem
-            key={product.id + index}
-            className='basis-1/2 md:basis-1/4 xl:basis-1/5'
-          >
-            <ProductCard key={product?.id} product={product} />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
+      {products?.map((product, index) => (
+        <CarouselItem
+          key={product.id + index}
+          className='basis-1/2 md:basis-1/4 xl:basis-1/5'
+        >
+          <ProductCard key={product?.id} product={product} />
+        </CarouselItem>
+      ))}
     </CarouselContainer>
   );
 };

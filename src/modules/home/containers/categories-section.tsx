@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 
 import { CarouselContainer } from '@/components/carousel-container';
 import { SkeletonsList } from '@/components/skeletons';
-import { CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { CarouselItem } from '@/components/ui/carousel';
 import { CategoryCard } from '@/modules/category/components/category-card';
 import { CategoryService } from '@/modules/category/services/category.service';
 
@@ -11,16 +11,14 @@ const CategoriesSectionContent = async () => {
 
   return (
     <CarouselContainer hideBtns loop align={'start'}>
-      <CarouselContent>
-        {categories?.map((category, index) => (
-          <CarouselItem
-            key={category.id + index}
-            className='basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6 2xl:basis-1/9'
-          >
-            <CategoryCard key={category?.id} category={category} />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
+      {categories?.map((category, index) => (
+        <CarouselItem
+          key={category.id + index}
+          className='basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6 2xl:basis-1/9'
+        >
+          <CategoryCard key={category?.id} category={category} />
+        </CarouselItem>
+      ))}
     </CarouselContainer>
   );
 };

@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import {
   Carousel,
   CarouselApi,
+  CarouselContent,
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel';
@@ -74,7 +75,7 @@ const CarouselContainer = ({
   return (
     <div className={cn('px-4', className)}>
       <Carousel opts={{ loop, align }} setApi={setCarouselAPI}>
-        {children}
+        <CarouselContent>{children}</CarouselContent>
 
         {!hideBtns && (
           <>

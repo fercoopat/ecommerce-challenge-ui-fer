@@ -1,6 +1,6 @@
 import { Banner } from '@/components/banner';
 import { CarouselContainer } from '@/components/carousel-container';
-import { CarouselContent, CarouselItem } from '@/components/ui/carousel';
+import { CarouselItem } from '@/components/ui/carousel';
 import { HOME_MORE_RECENT_BANNER_IMAGES } from '@/constants/images/home/banner-images';
 import { ProductCard } from '@/modules/product/components/product-card';
 import { IProduct } from '@/modules/product/interfaces/product.interface';
@@ -37,13 +37,11 @@ const MoreRecentSectionContent = ({ products }: Props) => {
           align={'start'}
           className='max-w-[90dvw]'
         >
-          <CarouselContent>
-            {products?.map((product, index) => (
-              <CarouselItem key={product.id + index} className='basis-1/2'>
-                <ProductCard key={product?.id} product={product} />
-              </CarouselItem>
-            ))}
-          </CarouselContent>
+          {products?.map((product, index) => (
+            <CarouselItem key={product.id + index} className='basis-1/2'>
+              <ProductCard key={product?.id} product={product} />
+            </CarouselItem>
+          ))}
         </CarouselContainer>
       </div>
 
