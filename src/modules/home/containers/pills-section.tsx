@@ -28,7 +28,7 @@ const PillsSection = () => {
   return (
     <>
       <section className='my-8 max-w-screen w-full absolute left-0 bg-primary'>
-        <div className='relative z-10 text-primary-foreground max-w-[90dvw] w-full mx-auto py-10 grid gap-4 lg:gap-8 2xl:max-w-[1447px] 2xl:grid-cols-2'>
+        <div className='relative z-10 text-primary-foreground max-w-[90dvw] w-full mx-auto py-10 grid gap-10 lg:gap-8 2xl:max-w-[1447px] 2xl:grid-cols-2'>
           <p className='font-bold text-[34px] text-center leading-snug lg:max-w-[40%] mx-auto 2xl:max-w-[475px] 2xl:text-start 2xl:text-[42px] 2xl:pt-10'>
             Lo que necesitas, cuando lo necesitas
           </p>
@@ -41,7 +41,7 @@ const PillsSection = () => {
         </div>
       </section>
 
-      <div className='h-[1000px]'></div>
+      <div className='h-10'></div>
     </>
   );
 };

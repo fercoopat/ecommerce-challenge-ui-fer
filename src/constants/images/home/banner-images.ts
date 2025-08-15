@@ -17,3 +17,7 @@ export const HOME_AFTER_RECOMMENDED_BANNER_IMAGES = {
   maxivis: '/images/home/after-recommended-banners/maxivis.webp',
   chineseMenthol: '/images/home/after-recommended-banners/chinese-menthol.webp',
 } as const;
+
+export const HOME_MORE_RECENT_BANNER_IMAGES = {
+  manyProducts: '/images/home/more-recent-banners/more-recent-banner.webp',
+} as const;

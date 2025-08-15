@@ -12,7 +12,7 @@ const BANNER_BREAKPOINTS: Record<Breakpoint, string> = {
 
 type BannerProps = {
   desktopSrc: string;
-  mobileSrc: string;
+  mobileSrc?: string;
   alt?: string;
   articleClassName?: string;
   children?: React.ReactNode;
@@ -26,7 +26,7 @@ const Banner = ({
   articleClassName,
   className,
   desktopSrc,
-  mobileSrc,
+  mobileSrc = desktopSrc,
   imgClassName,
   alt = 'Banner',
   switchAt = 'md',
@@ -43,7 +43,7 @@ const Banner = ({
         <img
           src={mobileSrc}
           alt={alt}
-          className={cn('size-full object-cover', imgClassName)}
+          className={cn('size-full', imgClassName)}
         />
       </picture>
 

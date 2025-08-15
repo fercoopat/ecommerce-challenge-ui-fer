@@ -19,8 +19,8 @@ const { props: desktopImg } = getImageProps({
 
 const HeroSection = () => {
   return (
-    <section className='flex flex-col gap-4 lg:grid lg:grid-cols-6 xl:h-full xl:max-h-[477px] lg:min-h-[477px]'>
-      <div className='relative rounded-[15px] size-full md:aspect-video lg:col-span-4 lg:aspect-auto min-h-[240px] lg:min-h-auto xl:min-h-[101%]'>
+    <section className='grid gap-4 lg:grid-cols-6 xl:h-full xl:max-h-[477px] lg:min-h-[477px]'>
+      <div className='relative rounded-[15px] size-full md:aspect-video lg:col-span-4 lg:aspect-auto min-h-[240px] lg:min-h-[101%]'>
         <picture>
           <source media='(min-width: 1024px)' srcSet={desktopImg.srcSet} />
           <source media='(max-width: 1023px)' srcSet={mobileImg.srcSet} />
