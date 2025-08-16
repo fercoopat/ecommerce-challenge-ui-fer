@@ -1,13 +1,13 @@
-import { Suspense } from 'react';
+import { Suspense } from "react";
 
-import { SkeletonsList } from '@/components/skeletons';
-import { MoreRecentSectionContent } from '@/modules/home/components/more-recent-section';
-import { ProductService } from '@/modules/product/services/product.service';
+import { SkeletonsList } from "@/components/skeletons";
+import { MoreRecentSectionContent } from "@/modules/home/components/more-recent-section";
+import { ProductService } from "@/modules/product/services/product.service";
 
 const LoadContent = async () => {
   const { data: products } = await ProductService.getAll({
     size: 8,
-    sort: { rating: 'desc' },
+    sort: { rating: "desc" },
   });
 
   return <MoreRecentSectionContent products={products} />;
@@ -15,16 +15,16 @@ const LoadContent = async () => {
 
 const MoreRecentSection = () => {
   return (
-    <section className='grid gap-8 mt-[1125px] sm:mt-[1025px] md:mt-[750px] lg:mt-[550px] 2xl:mt-[400px]'>
-      <p className='font-medium text-base text-primary-dark'>
+    <section className="mt-10 grid gap-8">
+      <p className="text-primary-dark text-base font-medium">
         De lo más reciente
       </p>
 
       <Suspense
         fallback={
           <SkeletonsList
-            containerClassName='flex items-center overflow-x-auto gap-4'
-            className='bg-gray-300 h-[313px] w-[184px] lg:w-[276px] lg:h-[405px]'
+            containerClassName="flex items-center overflow-x-auto gap-4"
+            className="h-[313px] w-[184px] bg-gray-300 lg:h-[405px] lg:w-[276px]"
             size={5}
           />
         }
