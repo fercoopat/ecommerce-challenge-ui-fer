@@ -1,24 +1,24 @@
-'use client';
+"use client";
 
-import { MailIcon } from 'lucide-react';
-import Link from 'next/link';
-import { useCallback, useState } from 'react';
+import { MailIcon } from "lucide-react";
+import Link from "next/link";
+import { useCallback, useState } from "react";
 
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { cn } from '@/lib/utils';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
 type Props = {
   className?: string;
 };
 const FooterSubscribeForm = ({ className }: Props) => {
-  const [email, setEmail] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       setEmail(e?.target?.value?.trim());
     },
-    [setEmail]
+    [setEmail],
   );
 
   const handleSubscribe = useCallback(() => {
@@ -27,35 +27,35 @@ const FooterSubscribeForm = ({ className }: Props) => {
     }
     if (window !== undefined && window !== null) {
       window.alert(`El usuario con el correo: ${email} se ha suscrito.`);
-      setEmail('');
+      setEmail("");
     }
   }, [email]);
 
   return (
-    <div className={cn('max-w-[388px] space-y-2', className)}>
-      <section className='flex items-center size-full max-h-[48px] bg-background rounded-[30px] pl-6'>
-        <MailIcon className='text-[#363636]/50 h-[48px] -mr-2' />
+    <div className={cn("max-w-[388px] space-y-2", className)}>
+      <section className="bg-background flex size-full max-h-[48px] items-center rounded-[30px] pl-6">
+        <MailIcon className="-mr-2 h-[48px] text-[#363636]/50" />
 
         <Input
-          type='email'
-          placeholder='Correo electrónico'
-          className='rounded-r-none shadow-none border-none h-full text-[#363636] text-[14px] font-light min-h-[48px] mb-1 focus-visible:ring-0'
+          type="email"
+          placeholder="Correo electrónico"
+          className="mb-1 h-full min-h-[48px] rounded-r-none border-none text-[14px] font-light text-[#363636] shadow-none focus-visible:ring-0"
           value={email}
           onChange={handleChange}
         />
 
         <Button
-          variant='secondary'
-          className='rounded-r-[30px] rounded-l-none shadow-none font-normal text-[16px] h-full min-h-[48px]'
+          variant="secondary"
+          className="h-full min-h-[48px] rounded-l-none rounded-r-[30px] text-[16px] shadow-none"
           onClick={handleSubscribe}
         >
           Enviar
         </Button>
       </section>
 
-      <section className='text-[14px] font-normal'>
-        <span>Al suscribirte aceptas nuestros</span>{' '}
-        <Link href='#' className='text-secondary underline'>
+      <section className="text-[14px]">
+        <span>Al suscribirte aceptas nuestros</span>{" "}
+        <Link href="#" className="text-secondary underline">
           Términos y condiciones y Política de privacidad y cookies.
         </Link>
       </section>

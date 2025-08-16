@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from "react";
 
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselApi,
   CarouselContent,
   CarouselNext,
   CarouselPrevious,
-} from '@/components/ui/carousel';
-import { cn } from '@/lib/utils';
+} from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 
 const NAV_BTN_BASE = cn(
-  'border-none',
-  'bg-primary [&_svg]:text-primary-foreground hover:bg-secondary hover:[&_svg]:text-secondary-foreground',
-  'z-[1200]'
+  "border-none",
+  "!bg-primary [&_svg]:!text-primary-foreground hover:!bg-secondary hover:[&_svg]:!text-secondary-foreground",
+  "z-[1200]",
 );
 
 type AlignProp =
-  | 'start'
-  | 'center'
-  | 'end'
+  | "start"
+  | "center"
+  | "end"
   | ((viewSize: number, snapSize: number, index: number) => number);
 
 type Props = {
@@ -37,7 +37,7 @@ const CarouselContainer = ({
   className,
   btnClassName,
   hideBtns = false,
-  align = 'center',
+  align = "center",
   loop = false,
 }: Props) => {
   const [carouselAPI, setCarouselAPI] = useState<CarouselApi | null>(null);
@@ -56,7 +56,7 @@ const CarouselContainer = ({
         carouselAPI.scrollTo(index);
       }
     },
-    [carouselAPI]
+    [carouselAPI],
   );
 
   useEffect(() => {
@@ -65,35 +65,35 @@ const CarouselContainer = ({
     onSelect();
     setScrollSnaps(carouselAPI.scrollSnapList());
 
-    carouselAPI.on('select', onSelect);
+    carouselAPI.on("select", onSelect);
 
     return () => {
-      carouselAPI.off('select', onSelect);
+      carouselAPI.off("select", onSelect);
     };
   }, [carouselAPI, onSelect]);
 
   return (
-    <div className={cn('px-4', className)}>
+    <div className={cn("px-4", className)}>
       <Carousel opts={{ loop, align }} setApi={setCarouselAPI}>
         <CarouselContent>{children}</CarouselContent>
 
         {!hideBtns && (
           <>
             <CarouselPrevious
-              aria-label='Go to previous slide'
-              className={cn(NAV_BTN_BASE, '-left-4', btnClassName)}
+              aria-label="Go to previous slide"
+              className={cn(NAV_BTN_BASE, "-left-4", btnClassName)}
             />
 
             <CarouselNext
-              aria-label='Go to next slide'
-              className={cn(NAV_BTN_BASE, '-right-4', btnClassName)}
+              aria-label="Go to next slide"
+              className={cn(NAV_BTN_BASE, "-right-4", btnClassName)}
             />
           </>
         )}
       </Carousel>
 
       {scrollSnaps?.length > 1 && (
-        <div className='flex justify-center mt-4 space-x-2 overflow-x-auto'>
+        <div className="mt-4 flex justify-center space-x-2 overflow-x-auto">
           {scrollSnaps.map((_, index) => {
             const isSelected = selectedIndex === index;
 
@@ -101,9 +101,9 @@ const CarouselContainer = ({
               <Button
                 key={index}
                 onClick={handleScrollTo(index)}
-                size='icon'
-                className={cn('w-2 h-2 rounded-full bg-gray-300', {
-                  'bg-secondary w-[23px]': isSelected,
+                size="icon"
+                className={cn("h-2 w-2 rounded-full bg-gray-300", {
+                  "bg-secondary w-[23px]": isSelected,
                 })}
               />
             );

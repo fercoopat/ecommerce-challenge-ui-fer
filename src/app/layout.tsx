@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
-
-import { cn } from "@/lib/utils";
 
 import "./globals.css";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-montserrat",
-  weight: ["300", "400", "500", "600", "700"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "Botifarma",
@@ -24,9 +14,7 @@ type Props = Readonly<{
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="es">
-      <body className={cn("antialiased", montserrat.className)}>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
