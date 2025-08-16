@@ -39,3 +39,8 @@ export const HOME_LOWER_CAROUSEL_IMAGES = {
   dominalBox: "/images/home/lower-banner-carousel-section/dominal-box.webp",
   citramaqBox: "/images/home/lower-banner-carousel-section/citramaq-box.webp",
 } as const;
+
+export const HOME_PRE_FOOTER_IMAGES = {
+  productsBasketMobile:
+    "/images/home/pre-footer-section/products-basket-mobile.webp",
+} as const;
