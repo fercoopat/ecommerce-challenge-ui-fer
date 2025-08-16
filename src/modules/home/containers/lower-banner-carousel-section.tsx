@@ -1,6 +1,7 @@
+import Image from "next/image";
+
 import { Banner } from "@/components/banner";
 import { CarouselContainer } from "@/components/carousel-container";
-import ImageFallback from "@/components/image-fallback/image-fallback";
 import { CarouselItem } from "@/components/ui/carousel";
 import {
   HOME_LOWER_BANNER_IMAGES,
@@ -41,12 +42,11 @@ const LowerBannerCarouselSection = () => {
             key={index}
             className="relative aspect-square h-fit w-full min-w-[128px] basis-1/2 rounded-[15px] pl-2 md:aspect-video md:basis-1/4"
           >
-            <ImageFallback
+            <Image
               fill
               alt={key}
               src={img}
               className="rounded-[15px] object-contain object-center"
-              placeholderClassName="rounded-[15px]"
             />
           </CarouselItem>
         ))}
