@@ -100,6 +100,7 @@ const CarouselContainer = ({
             return (
               <Button
                 key={index}
+                aria-label={`Scroll button_${index}`}
                 onClick={handleScrollTo(index)}
                 size="icon"
                 className={cn("h-2 w-2 rounded-full bg-gray-300", {

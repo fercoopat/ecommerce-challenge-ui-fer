@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "images.weserv.nl",
+        hostname: "www.gosupps.com",
         port: "",
       },
       {

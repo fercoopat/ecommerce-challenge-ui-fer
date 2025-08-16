@@ -1,4 +1,5 @@
-import { ImageLoader } from "@/components/image-loader";
+import Image from "next/image";
+
 import { Rating } from "@/components/rating/rating";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -14,9 +15,6 @@ type Props = {
 const ProductCard = ({ product, className }: Props) => {
   if (!product) return null;
 
-  const cardWidth = 184;
-  const cardHeight = 184;
-
   return (
     <Card
       className={cn(
@@ -31,17 +29,17 @@ const ProductCard = ({ product, className }: Props) => {
       <ProductCardFavoriteAction className="absolute top-2 right-2 z-10" />
 
       <CardContent className="flex-1 p-0">
-        <ImageLoader
-          priority
-          alt={product.name}
-          src={product.image}
-          height={cardHeight}
-          width={cardWidth}
-          className="relative min-h-[157px] w-full rounded-t-[15px] rounded-b-none bg-white lg:h-[240px]"
-          imgClassName="rounded-t-[15px] object-contain size-full"
-          placeholder="empty"
-          sizes="100vw"
-        />
+        <article className="relative min-h-[157px] w-full rounded-t-[15px] rounded-b-none bg-white lg:h-[240px]">
+          <Image
+            priority
+            alt={product.name}
+            src={product.image}
+            height={184}
+            width={184}
+            className="size-full rounded-t-[15px] object-contain"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </article>
 
         <div className="text-primary-dark space-y-2 p-2">
           <CurrencyValue
@@ -57,7 +55,7 @@ const ProductCard = ({ product, className }: Props) => {
             {product.name}
           </p>
 
-          <Rating value={product.rating} variant="yellow" />
+          <Rating readOnly value={product.rating} variant="yellow" />
         </div>
       </CardContent>
 

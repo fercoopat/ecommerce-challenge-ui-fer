@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { HeartIcon } from 'lucide-react';
-import { useCallback, useState } from 'react';
+import { HeartIcon } from "lucide-react";
+import { useCallback, useState } from "react";
 
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 type Props = {
   className?: string;
@@ -18,17 +18,19 @@ const ProductCardFavoriteAction = ({ className }: Props) => {
 
   return (
     <Button
-      size={'icon'}
-      variant={'outline'}
-      className={cn('rounded-full bg-transparent size-fit p-2', className, {
-        'hover:[&_svg]:fill-secondary/75': isFavorite,
+      size="icon"
+      variant="outline"
+      aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+      className={cn("size-fit rounded-full bg-transparent p-2", className, {
+        "hover:[&_svg]:fill-secondary/75": isFavorite,
       })}
       onClick={handleToggleFav}
     >
       <HeartIcon
-        className={cn('size-[16px] lg:size-[22px]', {
-          'fill-secondary text-secondary': isFavorite,
+        className={cn("size-[16px] lg:size-[22px]", {
+          "fill-secondary text-secondary": isFavorite,
         })}
+        aria-hidden="true"
       />
     </Button>
   );

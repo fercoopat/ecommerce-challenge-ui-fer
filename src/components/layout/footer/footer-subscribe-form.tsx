@@ -45,6 +45,7 @@ const FooterSubscribeForm = ({ className }: Props) => {
         />
 
         <Button
+          aria-label="Send subscribe form data"
           variant="secondary"
           className="h-full min-h-[48px] rounded-l-none rounded-r-[30px] text-[16px] shadow-none"
           onClick={handleSubscribe}

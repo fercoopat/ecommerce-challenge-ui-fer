@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { MinusIcon, PlusIcon } from 'lucide-react';
-import { useCallback, useState } from 'react';
+import { MinusIcon, PlusIcon } from "lucide-react";
+import { useCallback, useState } from "react";
 
-import AddProductIcon from '@/components/icons/add-product.icon';
-import { Button } from '@/components/ui/button';
-import { CardFooter } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
+import AddProductIcon from "@/components/icons/add-product.icon";
+import { Button } from "@/components/ui/button";
+import { CardFooter } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 const ProductCardActions = () => {
   const [productAmount, setProductAmount] = useState<number>(0);
@@ -21,51 +21,54 @@ const ProductCardActions = () => {
         return prev + value;
       });
     },
-    [setProductAmount]
+    [setProductAmount],
   );
 
   return (
-    <CardFooter className='flex items-center justify-between p-2 pt-0'>
-      <div className='flex items-center justify-between bg-white rounded-[10px] min-w-[92px]'>
+    <CardFooter className="flex items-center justify-between p-2 pt-0">
+      <div className="flex min-w-[92px] items-center justify-between rounded-[10px] bg-white">
         <Button
-          size={'icon'}
-          variant={'ghost'}
-          className='rounded-r-none'
+          aria-label="Subtract product amount"
+          size={"icon"}
+          variant={"ghost"}
+          className="rounded-r-none"
           onClick={handleChangeAmount(-1)}
         >
-          <MinusIcon />
+          <MinusIcon aria-hidden="true" />
         </Button>
 
         <Separator
-          className='min-h-[20px] text-primary-dark'
-          orientation='vertical'
+          className="text-primary-dark min-h-[20px]"
+          orientation="vertical"
         />
 
-        <span className='text-primary-dark text-[15px] w-8 text-center'>
+        <span className="text-primary-dark w-8 text-center text-[15px]">
           {productAmount}
         </span>
 
         <Separator
-          className='min-h-[20px] text-primary-dark'
-          orientation='vertical'
+          className="text-primary-dark min-h-[20px]"
+          orientation="vertical"
         />
 
         <Button
-          size={'icon'}
-          variant={'ghost'}
-          className='rounded-l-none'
+          aria-label="Add product amount"
+          size={"icon"}
+          variant={"ghost"}
+          className="rounded-l-none"
           onClick={handleChangeAmount(1)}
         >
-          <PlusIcon />
+          <PlusIcon aria-hidden="true" />
         </Button>
       </div>
 
       <Button
-        size={'icon'}
-        variant={'ghost'}
-        className='rounded-full text-primary hover:bg-background p-1 size-fit'
+        aria-label="Add product to cart button"
+        size={"icon"}
+        variant={"ghost"}
+        className="text-primary hover:bg-background size-fit rounded-full p-1"
       >
-        <AddProductIcon className='size-[27px]' />
+        <AddProductIcon aria-hidden="true" className="size-[27px]" />
       </Button>
     </CardFooter>
   );

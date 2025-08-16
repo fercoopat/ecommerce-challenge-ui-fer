@@ -15,7 +15,12 @@ const PreFooterSection = () => {
           cuidado personal y mucho más.
         </p>
 
-        <Button variant={"default"} className="mt-2 w-fit md:mt-4" size={"lg"}>
+        <Button
+          aria-label="Explore products pre footer button"
+          variant={"default"}
+          className="mt-2 w-fit md:mt-4"
+          size={"lg"}
+        >
           Explorar productos
         </Button>
       </div>

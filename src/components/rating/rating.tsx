@@ -1,35 +1,35 @@
-'use client';
+"use client";
 
-import { LucideProps, StarIcon } from 'lucide-react';
-import React from 'react';
+import { LucideProps, StarIcon } from "lucide-react";
+import React from "react";
 
-import { cn } from '@/lib/utils';
+import { cn } from "@/lib/utils";
 
 const ratingVariants = {
   default: {
-    full: 'fill-current text-foreground',
-    empty: 'fill-transparent text-muted-foreground',
+    full: "fill-current text-foreground",
+    empty: "fill-transparent text-muted-foreground",
   },
 
   destructive: {
-    full: 'fill-current text-red-500',
-    empty: 'fill-transparent text-red-200',
+    full: "fill-current text-red-500",
+    empty: "fill-transparent text-red-200",
   },
 
   yellow: {
-    full: 'fill-current text-yellow-400',
-    empty: 'fill-transparent stroke-[#a09799]',
+    full: "fill-current text-yellow-400",
+    empty: "fill-transparent stroke-[#a09799]",
   },
 };
 
 const DEFAULT_PRECISION = 0.5;
 const DEFAULT_MAX_STARS = 5;
 const DEFAULT_STAR_SIZE = 20;
-const DEFAULT_ICON = <StarIcon className='px-0.5' />;
+const DEFAULT_ICON = <StarIcon className="px-0.5" />;
 
 const checkPrecision = (precision: number) => {
   if (precision <= 0 || precision > 1) {
-    console.error('Precision must be greater than 0 and less than 1');
+    console.error("Precision must be greater than 0 and less than 1");
     return false;
   }
   return true;
@@ -53,7 +53,7 @@ interface RatingItemProps extends React.HTMLAttributes<HTMLLabelElement> {
 
 const RatingItem = ({
   size,
-  variant = 'default',
+  variant = "default",
   value,
   point,
   hoveredValue,
@@ -66,7 +66,7 @@ const RatingItem = ({
   onValueChange,
   onValueHover,
 }: RatingItemProps) => {
-  const Comp = readOnly ? 'span' : 'label';
+  const Comp = readOnly ? "span" : "label";
   const ref = React.useRef<HTMLLabelElement>(null);
   const isFirstRender = React.useRef(true);
   const id = React.useId();
@@ -82,12 +82,12 @@ const RatingItem = ({
     const emptyIcon = React.cloneElement(Icon, {
       size,
       className: cn(ratingVariants[variant].empty, Icon.props.className),
-      'aria-hidden': 'true',
+      "aria-hidden": "true",
     });
     const fullIcon = React.cloneElement(Icon, {
       size,
       className: cn(ratingVariants[variant].full, Icon.props.className),
-      'aria-hidden': 'true',
+      "aria-hidden": "true",
     });
     return { emptyIcon, fullIcon };
   }, [Icon, size, variant]);
@@ -101,7 +101,7 @@ const RatingItem = ({
       const base = Math.ceil(point) - 1;
       return base + Math.ceil(fillRatio / precision) * precision;
     },
-    [precision, point]
+    [precision, point],
   );
 
   const handleMouseMove = React.useCallback(
@@ -109,7 +109,7 @@ const RatingItem = ({
       if (!isInteractive) return;
       onValueHover(getRatingPoint(event));
     },
-    [isInteractive, onValueHover, getRatingPoint]
+    [isInteractive, onValueHover, getRatingPoint],
   );
 
   const handleClick = React.useCallback(
@@ -122,7 +122,7 @@ const RatingItem = ({
 
       onValueChange?.(newPoint === value ? 0 : newPoint);
     },
-    [isInteractive, getRatingPoint, value, onValueHover, onValueChange]
+    [isInteractive, getRatingPoint, value, onValueHover, onValueChange],
   );
 
   React.useEffect(() => {
@@ -142,29 +142,32 @@ const RatingItem = ({
     <>
       <Comp
         ref={ref}
-        htmlFor={`${ratingIconId}-${point}`}
+        htmlFor={!readOnly ? `${ratingIconId}-${point}` : undefined}
         aria-label={`${point} Stars`}
+        role={!readOnly ? "radio" : undefined} // <-- agregado
+        aria-checked={!readOnly ? value === point : undefined} // <-- agregado
         onClick={!readOnly ? handleClick : undefined}
         onMouseMove={!readOnly ? handleMouseMove : undefined}
         onMouseLeave={!readOnly ? onMouseLeave : undefined}
         className={cn(
-          '[&_svg]:pointer-events-none',
+          "[&_svg]:pointer-events-none",
           isPartialPoint &&
-            'absolute top-0 left-0 overflow-hidden pointer-events-none',
-          isInteractive && 'cursor-pointer'
+            "pointer-events-none absolute top-0 left-0 overflow-hidden",
+          isInteractive && "cursor-pointer",
         )}
         style={{ width: partialPointWidth }}
       >
         {!isPartialPoint && !shouldShowFilled && icons.emptyIcon}
         {shouldShowFilled && icons.fullIcon}
       </Comp>
+
       {!readOnly && (
         <input
-          type='radio'
+          type="radio"
           id={`${ratingIconId}-${point}`}
           name={name}
           value={point}
-          className='sr-only'
+          className="sr-only"
           tabIndex={-1}
         />
       )}
@@ -194,7 +197,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
       max = DEFAULT_MAX_STARS,
       size = DEFAULT_STAR_SIZE,
       Icon = DEFAULT_ICON,
-      variant = 'default',
+      variant = "default",
       className,
       readOnly = false,
       disabled = false,
@@ -203,7 +206,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
       onValueHover,
       ...props
     },
-    ref
+    ref,
   ) => {
     const id = React.useId();
     const ratingName = name ?? `rating-${id}`;
@@ -215,7 +218,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
         setHoveredValue(point);
         onValueHover?.(point);
       },
-      [onValueHover]
+      [onValueHover],
     );
 
     const handleKeyDown = React.useCallback(
@@ -223,9 +226,9 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
         if (!isInteractive) return;
 
         switch (event.key) {
-          case 'ArrowRight':
+          case "ArrowRight":
 
-          case 'ArrowUp':
+          case "ArrowUp":
             event.preventDefault();
 
             if (value + precision > max) {
@@ -235,9 +238,9 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
             }
             break;
 
-          case 'ArrowLeft':
+          case "ArrowLeft":
 
-          case 'ArrowDown':
+          case "ArrowDown":
             event.preventDefault();
 
             if (value - precision < 0) {
@@ -251,7 +254,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
             break;
         }
       },
-      [isInteractive, value, max, precision, onValueChange]
+      [isInteractive, value, max, precision, onValueChange],
     );
 
     const stars = React.useMemo(() => {
@@ -259,7 +262,7 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
       return Array.from({ length: max }, (_, index) => ({
         key: index,
         points: Array.from({ length: Math.floor(1 / precision) }).map(
-          (__, i) => index + precision * (i + 1)
+          (__, i) => index + precision * (i + 1),
         ),
       }));
     }, [max, precision]);
@@ -267,11 +270,11 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
     return (
       <div
         ref={ref}
-        role={!readOnly ? 'radiogroup' : 'img'}
+        role={!readOnly ? "radiogroup" : "meter"} // <-- cambiado img → meter
         onKeyDown={!readOnly ? handleKeyDown : undefined}
         tabIndex={!readOnly && value === 0 ? 0 : undefined}
-        className={cn('flex', className)}
-        aria-label={readOnly ? `${value} stars` : 'Rating'}
+        className={cn("flex", className)}
+        aria-label={readOnly ? `${value} stars` : "Rating"}
         aria-valuemin={0}
         aria-valuemax={max}
         aria-valuenow={value}
@@ -282,12 +285,11 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
           <span
             key={key}
             className={cn(
-              'relative',
-              isInteractive && 'transition-transform hover:scale-110',
-              disabled && 'opacity-50 cursor-not-allowed'
+              "relative",
+              isInteractive && "transition-transform hover:scale-110",
+              disabled && "cursor-not-allowed opacity-50",
             )}
             aria-disabled={disabled}
-            aria-hidden={readOnly}
           >
             {points.map((point) => (
               <RatingItem
@@ -311,8 +313,8 @@ const Rating = React.forwardRef<HTMLDivElement, RatingProps>(
         ))}
       </div>
     );
-  }
+  },
 );
-Rating.displayName = 'Rating';
+Rating.displayName = "Rating";
 
 export { Rating };
