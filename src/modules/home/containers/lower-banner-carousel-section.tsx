@@ -11,11 +11,11 @@ const PRODUCT_CAROUSEL_IMAGES = Object.entries(HOME_LOWER_CAROUSEL_IMAGES);
 
 const LowerBannerCarouselSection = () => {
   return (
-    <section className="2xl:bg-secondary-light mt-10 flex flex-col gap-4 2xl:mt-6 2xl:rounded-[6px] 2xl:bg-[url('/images/home/lower-banner-carousel-section/minus-50.webp')] 2xl:bg-contain 2xl:bg-[40%] 2xl:bg-no-repeat">
+    <section className="lg:bg-secondary-light mt-10 flex flex-col gap-4 lg:rounded-[6px] lg:bg-[url('/images/home/lower-banner-carousel-section/minus-50.webp')] lg:bg-contain lg:bg-[50%] lg:bg-no-repeat 2xl:mt-6 2xl:bg-[40%]">
       <Banner
         desktopSrc={HOME_LOWER_BANNER_IMAGES.minus50PercentDesktop}
         mobileSrc={HOME_LOWER_BANNER_IMAGES.minus50Percent}
-        articleClassName="h-[188px] aspect-video md:aspect-auto md:h-[85px] md:rounded-[6px] lg:bg-transparent lg:rounded-[6px] 2xl:aspect-video 2xl:flex 2xl:items-center 2xl:justify-end 2xl:overflow-visible"
+        articleClassName="h-[188px] aspect-video md:aspect-auto md:h-[85px] md:rounded-[6px] md:bg-secondary-light md:rounded-[6px] lg:bg-transparent 2xl:aspect-video 2xl:flex 2xl:items-center 2xl:justify-end 2xl:overflow-visible"
         className="p-4"
         switchAt="lg"
         imgClassName="md:object-contain md:object-right 2xl:h-[126px]"
