@@ -1,21 +1,21 @@
-import Image from "next/image";
-
+import { ImageLoader } from "@/components/image-loader";
 import { Rating } from "@/components/rating/rating";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { CurrencyValue } from "@/modules/product/components/currency-value";
 import ProductCardActions from "@/modules/product/components/product-card/product-card-actions";
 import ProductCardFavoriteAction from "@/modules/product/components/product-card/product-card-favorite-action";
-import { IProduct } from "@/modules/product/interfaces/product.interface";
+import type { IProduct } from "@/modules/product/interfaces/product.interface";
 
 type Props = {
   product: IProduct | undefined;
   className?: string;
 };
 const ProductCard = ({ product, className }: Props) => {
-  if (!product) {
-    return null;
-  }
+  if (!product) return null;
+
+  const cardWidth = 184;
+  const cardHeight = 184;
 
   return (
     <Card
@@ -31,16 +31,17 @@ const ProductCard = ({ product, className }: Props) => {
       <ProductCardFavoriteAction className="absolute top-2 right-2 z-10" />
 
       <CardContent className="flex-1 p-0">
-        <div className="relative min-h-[157px] w-full rounded-t-[15px] bg-white lg:min-h-[240px]">
-          <Image
-            fill
-            src={product.image}
-            alt={product.name}
-            className="rounded-t-[15px] object-contain object-center"
-            placeholder="empty" // o 'blur' si tienes blurDataURL
-            sizes="(max-width: 768px) 100vw, 184px"
-          />
-        </div>
+        <ImageLoader
+          priority
+          alt={product.name}
+          src={product.image}
+          height={cardHeight}
+          width={cardWidth}
+          className="relative min-h-[157px] w-full rounded-t-[15px] rounded-b-none bg-white lg:h-[240px]"
+          imgClassName="rounded-t-[15px] object-contain size-full"
+          placeholder="empty"
+          sizes="100vw"
+        />
 
         <div className="text-primary-dark space-y-2 p-2">
           <CurrencyValue
