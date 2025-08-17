@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { BASE_URL } from "@/constants/envs";
-import type { IStateCode } from "@/constants/states";
+import { STATES_VALUES, type IStateCode } from "@/constants/states";
 import CategoryDetailsContainer from "@/modules/category/containers/category-details-container";
 import { CategoryService } from "@/modules/category/services/category.service";
 
@@ -50,6 +50,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: "No se pudo cargar la categoría",
     };
   }
+}
+
+export async function generateStaticParams() {
+  const { data: categories } = await CategoryService.getAll();
+
+  if (!categories?.length) {
+    return [];
+  }
+
+  return categories?.flatMap((cat) =>
+    STATES_VALUES.map((state) => ({
+      state,
+      slug: cat.id,
+    })),
+  );
 }
 
 export default async function CategoriesDetailsPage({ params }: Props) {
