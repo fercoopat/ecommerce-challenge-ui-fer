@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { BASE_URL } from "@/constants/envs";
 import type { IStateCode } from "@/constants/states";
 import CategoryDetailsContainer from "@/modules/category/containers/category-details-container";
 import { CategoryService } from "@/modules/category/services/category.service";
@@ -12,23 +13,30 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, state } = await params;
 
   try {
     const { data } = await CategoryService.getOne(slug);
 
+    const title = data?.name
+      ? `${data.name} | Categorías`
+      : "Categoría no encontrada";
+
+    const description = data?.description ?? `Detalles de la categoría ${slug}`;
+
+    const canonicalUrl = `${BASE_URL}/${state}/categories/${slug}`;
+
     return {
-      title: data?.name
-        ? `${data.name} | Categorías`
-        : "Categoría no encontrada",
-      description: data?.description ?? `Detalles de la categoría ${slug}`,
+      title,
+      description,
       openGraph: {
         title: data?.name ?? "Categoría",
-        description: data?.description ?? `Detalles de la categoría ${slug}`,
+        description,
         type: "website",
+        url: canonicalUrl, // 👈 también en openGraph.url
       },
       alternates: {
-        canonical: `/categories/${slug}`,
+        canonical: canonicalUrl, // 👈 ahora es absoluta
       },
     };
   } catch (e) {

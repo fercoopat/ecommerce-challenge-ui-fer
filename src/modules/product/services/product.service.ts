@@ -1,13 +1,13 @@
-import { PRODUCTS_MOCK_DATA } from '@/constants/data';
-import { ApiClient, ApiResponse } from '@/lib/api/api-client';
-import { IProduct } from '@/modules/product/interfaces/product.interface';
+import { PRODUCTS_MOCK_DATA } from "@/constants/data";
+import { ApiClient, ApiResponse } from "@/lib/api/api-client";
+import { IProduct } from "@/modules/product/interfaces/product.interface";
 
 type IProductKey = keyof IProduct;
 
 type Params = {
   page?: number;
   size?: number;
-  sort?: Partial<Record<IProductKey, 'asc' | 'desc'>>;
+  sort?: Partial<Record<IProductKey, "asc" | "desc">>;
 };
 
 class Service extends ApiClient {
@@ -36,6 +36,14 @@ class Service extends ApiClient {
       }, 200);
     });
   }
+
+  async getOne(slug: string): Promise<ApiResponse<IProduct>> {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve({ data: PRODUCTS_MOCK_DATA.find((prod) => prod.id === slug) });
+      }, 200);
+    });
+  }
 }
 
-export const ProductService = new Service('/products');
+export const ProductService = new Service("/products");
