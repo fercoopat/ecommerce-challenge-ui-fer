@@ -1,6 +1,4 @@
-@media (max-width: 765px) {
-  .primary-color-selector span,
-  .primary-color-selector svg:nth-of-type(2) {
-    display: none;
-  }
+.primary-color-selector span,
+.primary-color-selector svg:nth-of-type(2) {
+  display: none;
 }
