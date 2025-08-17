@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { BASE_URL } from "@/constants/envs";
-import { IStateCode } from "@/constants/states";
+import { IStateCode, STATES_VALUES } from "@/constants/states";
 import ProductDetailsContainer from "@/modules/product/containers/product-details-container";
 import { ProductService } from "@/modules/product/services/product.service";
 
@@ -51,6 +51,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: "No se pudo cargar el producto",
     };
   }
+}
+
+export async function generateStaticParams() {
+  const { data: products } = await ProductService.getAll({ size: 10 });
+
+  if (!products?.length) {
+    return [];
+  }
+
+  return products?.flatMap((prod) =>
+    STATES_VALUES.map((state) => ({
+      state,
+      slug: prod.id,
+    })),
+  );
 }
 
 export default async function ProductDetailsPage({ params }: Props) {
