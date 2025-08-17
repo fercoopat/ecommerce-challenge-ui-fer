@@ -20,11 +20,11 @@ const ProductCard = ({ product, className }: Props) => {
   return (
     <RelativeLink
       href={PRODUCT_PATHS.productDetailsPath(product.id)}
-      className="w-fit no-underline"
+      className="max-w-[184px] no-underline lg:max-w-[276px]"
     >
       <Card
         className={cn(
-          "relative h-full w-full max-w-[184px] bg-[rgba(255,255,255,0.50)] p-0 shadow-[0_20px_30px_0_rgba(43,52,69,0.04)] backdrop-blur-md lg:min-h-[405px] lg:max-w-[276px]",
+          "relative size-full max-w-[184px] bg-[rgba(255,255,255,0.50)] p-0 shadow-[0_20px_30px_0_rgba(43,52,69,0.04)] backdrop-blur-md lg:min-h-[405px] lg:max-w-[276px]",
           "hover:shadow-primary/20 hover:shadow-[0px_8px_8px_8px]",
           className,
         )}

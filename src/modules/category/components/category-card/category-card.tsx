@@ -20,7 +20,7 @@ const CategoryCard = ({ category }: Props) => {
     <RelativeLink
       key={category.id}
       href={CATEGORY_PATHS.categoryDetailsPath(category.id)}
-      className="w-fit no-underline"
+      className="max-w-[146px] no-underline"
     >
       <Card
         key={category.id}
