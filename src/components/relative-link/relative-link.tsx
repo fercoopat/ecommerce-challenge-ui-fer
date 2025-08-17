@@ -8,15 +8,19 @@ type Props = {
   children: React.ReactNode;
   href: string;
   className?: string;
+  paramsDepth?: number;
 } & LinkProps;
 
-const RelativeLink = ({ children, href, ...props }: Props) => {
+const RelativeLink = ({ children, href, paramsDepth, ...props }: Props) => {
   const params = useParams();
 
   const basePath = useMemo(() => {
     if (!params) return "";
-    return "/" + Object.values(params).join("/");
-  }, [params]);
+    const values = Object.values(params);
+    const selectedValues =
+      paramsDepth !== undefined ? values.slice(0, paramsDepth + 1) : values;
+    return "/" + selectedValues.join("/");
+  }, [params, paramsDepth]);
 
   const path = useMemo(() => {
     return href.startsWith("/") ? `${basePath}${href}` : `${basePath}/${href}`;

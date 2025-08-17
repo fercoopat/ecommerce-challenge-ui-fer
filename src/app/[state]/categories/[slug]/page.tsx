@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import { BASE_URL } from "@/constants/envs";
 import type { IStateCode } from "@/constants/states";
@@ -53,6 +54,10 @@ export default async function CategoriesDetailsPage({ params }: Props) {
   const { slug } = await params;
 
   const { data: category } = await CategoryService.getOne(slug);
+
+  if (!category) {
+    return notFound();
+  }
 
   return <CategoryDetailsContainer category={category} />;
 }

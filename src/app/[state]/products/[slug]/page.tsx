@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import { BASE_URL } from "@/constants/envs";
 import { IStateCode } from "@/constants/states";
@@ -54,6 +55,10 @@ export default async function ProductDetailsPage({ params }: Props) {
   const { slug } = await params;
 
   const { data: product } = await ProductService.getOne(slug);
+
+  if (!product) {
+    return notFound();
+  }
 
   return <ProductDetailsContainer product={product} />;
 }

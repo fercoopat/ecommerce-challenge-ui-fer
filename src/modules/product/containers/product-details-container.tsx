@@ -12,7 +12,6 @@ type Props = {
 const ProductDetailsContainer = ({ product }: Props) => {
   return (
     <main className="my-10 grid w-full gap-6 lg:grid-cols-12">
-      {/* Imagen del producto */}
       <Card className="flex items-center justify-center bg-white p-4 lg:col-span-4">
         {product?.image ? (
           <Image
