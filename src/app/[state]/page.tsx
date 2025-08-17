@@ -10,6 +10,8 @@ import PillsSection from "@/modules/home/containers/pills-section";
 import PreFooterSection from "@/modules/home/containers/pre-footer-section";
 import RecommendedSection from "@/modules/home/containers/recommended-section";
 
+export const revalidate = 60;
+
 type Props = {
   params: Promise<{
     state: IStateCode;

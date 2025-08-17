@@ -6,6 +6,8 @@ import { IStateCode } from "@/constants/states";
 import ProductDetailsContainer from "@/modules/product/containers/product-details-container";
 import { ProductService } from "@/modules/product/services/product.service";
 
+export const revalidate = 60;
+
 type Props = {
   params: Promise<{
     slug: string;

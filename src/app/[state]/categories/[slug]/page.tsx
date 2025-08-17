@@ -6,6 +6,8 @@ import type { IStateCode } from "@/constants/states";
 import CategoryDetailsContainer from "@/modules/category/containers/category-details-container";
 import { CategoryService } from "@/modules/category/services/category.service";
 
+export const revalidate = 60;
+
 type Props = {
   params: Promise<{
     slug: string;
