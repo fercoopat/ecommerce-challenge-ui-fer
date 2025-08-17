@@ -1,7 +1,7 @@
-import { redirect } from 'next/navigation';
+import { redirect } from "next/navigation";
 
-import { APP_PATHS } from '@/constants/app.paths';
-import { IStateCode } from '@/constants/states';
+import { APP_PATHS } from "@/constants/app.paths";
+import { IStateCode } from "@/constants/states";
 
 type Props = {
   params: Promise<{

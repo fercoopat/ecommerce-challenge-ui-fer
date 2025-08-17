@@ -1,9 +1,9 @@
-const MAIN_PATH = '/categories' as const;
+const MAIN_PATH = "categories" as const;
 
 export const CATEGORY_PATHS = {
   categoryDetailsPath: (categorySlug: string | undefined): string => {
     if (!categorySlug) {
-      return '#';
+      return "#";
     }
 
     return `${MAIN_PATH}/${categorySlug}`;

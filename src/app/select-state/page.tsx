@@ -19,8 +19,8 @@ export default async function SelectStatePage() {
   }
 
   return (
-    <main className="mt-[10%] flex w-full flex-col items-center justify-center">
-      <Card className="w-full max-w-sm">
+    <main className="flex h-screen flex-col items-center justify-center">
+      <Card className="bg-secondary text-secondary-foreground w-full max-w-sm">
         <CardContent className="space-y-4">
           <h2 className="text-center text-xl font-bold">¡Bienvenido!</h2>
 
@@ -29,10 +29,14 @@ export default async function SelectStatePage() {
             desea enviar los productos
           </p>
 
-          <StateSelector className="mx-auto">
-            <MapPinIcon aria-hidden="true" className="text-primary" />
+          <StateSelector className="!text-primary-foreground mx-auto">
+            <MapPinIcon
+              aria-hidden="true"
+              className="text-primary-foreground"
+            />
 
             <SelectValue
+              className="text-primary-foreground"
               aria-label="State selector value"
               placeholder="Seleccione la provincia"
             />
