@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { MapPinIcon } from 'lucide-react';
+import { MapPinIcon } from "lucide-react";
 
-import { StateSelector } from '@/components/state-selector';
-import { SelectValue } from '@/components/ui/select';
-import { useSettings } from '@/contexts/settings.context';
-import { cn } from '@/lib/utils';
+import { StateSelector } from "@/components/state-selector";
+import { SelectValue } from "@/components/ui/select";
+import { useSettings } from "@/contexts/settings.context";
+import { cn } from "@/lib/utils";
 
-import styles from './header-top-bar-state-selector.module.css';
+import styles from "./header-top-bar-state-selector.module.css";
 
 const HeaderTopBarStateSelector = () => {
   const { state } = useSettings();
@@ -16,13 +16,13 @@ const HeaderTopBarStateSelector = () => {
     <StateSelector
       defaultValue={state}
       className={cn(
-        'bg-transparent min-w-fit border-none md:bg-background md:min-h-[50px] xl:min-w-[138px]',
-        styles['state-selector']
+        "md:bg-background min-w-fit !border-none !bg-transparent md:min-h-[50px] xl:min-w-[138px]",
+        styles["state-selector"],
       )}
     >
-      <MapPinIcon className='text-primary size-[32px] md:size-[20px]' />
+      <MapPinIcon className="text-primary size-[32px] md:size-[20px]" />
 
-      <SelectValue placeholder='Seleccione la provincia' />
+      <SelectValue placeholder="Seleccione la provincia" />
     </StateSelector>
   );
 };

@@ -3,7 +3,10 @@ import { redirect } from "next/navigation";
 
 import MainLayoutContainer from "@/components/layout/containers/main-layout-container";
 import { APP_PATHS } from "@/constants/app.paths";
-import { COOKIES_SETTINGS_STATE_KEY } from "@/constants/settings-cookies-keys";
+import {
+  COOKIES_SETTINGS_PRIMARY_COLOR_KEY,
+  COOKIES_SETTINGS_STATE_KEY,
+} from "@/constants/settings-cookies-keys";
 import { IStateCode, STATES, STATES_CODES } from "@/constants/states";
 import { SettingsProvider } from "@/contexts/settings.context";
 import { getCookieValue } from "@/lib/cookies.utils";
@@ -67,6 +70,9 @@ export default async function StateLayout({ children, params }: Props) {
   const { state: stateParam } = await params;
 
   const cookieState = await getCookieValue(COOKIES_SETTINGS_STATE_KEY);
+  const cookiePrimaryColor = await getCookieValue(
+    COOKIES_SETTINGS_PRIMARY_COLOR_KEY,
+  );
 
   const state = stateParam ?? cookieState?.value;
 
@@ -75,7 +81,7 @@ export default async function StateLayout({ children, params }: Props) {
   }
 
   return (
-    <SettingsProvider state={state}>
+    <SettingsProvider state={state} primaryColor={cookiePrimaryColor?.value}>
       <MainLayoutContainer>{children}</MainLayoutContainer>
     </SettingsProvider>
   );

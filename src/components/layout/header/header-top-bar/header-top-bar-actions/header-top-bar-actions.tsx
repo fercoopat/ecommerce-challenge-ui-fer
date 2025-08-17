@@ -1,17 +1,22 @@
-import HeaderTopBarSearch from '@/components/layout/header/header-top-bar/header-top-bar-search';
-import { HeaderTopBarStateSelector } from '@/components/layout/header/header-top-bar/header-top-bar-state-selector';
-import { UserAvatar } from '@/modules/user/components/user-avatar';
+import HeaderTopBarSearch from "@/components/layout/header/header-top-bar/header-top-bar-search";
+import { HeaderTopBarStateSelector } from "@/components/layout/header/header-top-bar/header-top-bar-state-selector";
+import { PrimaryColorSelector } from "@/components/primary-color-selector";
+import { UserAvatar } from "@/modules/user/components/user-avatar";
 
 const HeaderTopBarActions = () => {
   return (
-    <section className='flex items-center md:justify-between md:w-full'>
-      <div className='flex items-center gap-4 justify-center md:w-full'>
+    <section className="flex items-center md:w-full md:justify-between">
+      <div className="flex items-center justify-center gap-4 md:w-full">
         <HeaderTopBarStateSelector />
 
-        <HeaderTopBarSearch className='max-md:hidden' />
+        <HeaderTopBarSearch className="max-md:hidden" />
       </div>
 
-      <UserAvatar />
+      <div className="flex items-center gap-2">
+        <PrimaryColorSelector />
+
+        <UserAvatar />
+      </div>
     </section>
   );
 };
