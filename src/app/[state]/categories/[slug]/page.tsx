@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { BASE_URL } from "@/constants/envs";
-import { STATES_VALUES, type IStateCode } from "@/constants/states";
+import { STATES_CODES, type IStateCode } from "@/constants/states";
 import CategoryDetailsContainer from "@/modules/category/containers/category-details-container";
 import { CategoryService } from "@/modules/category/services/category.service";
 
@@ -60,7 +60,7 @@ export async function generateStaticParams() {
   }
 
   return categories?.flatMap((cat) =>
-    STATES_VALUES.map((state) => ({
+    STATES_CODES.map((state) => ({
       state,
       slug: cat.id,
     })),
