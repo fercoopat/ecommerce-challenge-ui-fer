@@ -20,7 +20,7 @@ export default async function SelectStatePage() {
 
   return (
     <main className="flex h-screen flex-col items-center justify-center">
-      <Card className="bg-secondary text-secondary-foreground w-full max-w-sm">
+      <Card className="bg-primary text-primary-foreground w-full max-w-sm">
         <CardContent className="space-y-4">
           <h2 className="text-center text-xl font-bold">¡Bienvenido!</h2>
 

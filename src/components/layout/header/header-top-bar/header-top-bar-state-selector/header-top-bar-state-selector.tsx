@@ -16,7 +16,7 @@ const HeaderTopBarStateSelector = () => {
     <StateSelector
       defaultValue={state}
       className={cn(
-        "md:bg-background min-w-fit !border-none !bg-transparent md:min-h-[50px] xl:min-w-[138px]",
+        "min-w-fit !border-none !bg-transparent md:min-h-[50px] md:!bg-[#E6E9EE] xl:min-w-[138px]",
         styles["state-selector"],
       )}
     >
